@@ -7,10 +7,10 @@ const footerLinks = [
 
 function Footer() {
   return (
-    <footer className="px-3 py-4 md:px-5 md:pb-8">
+    <footer className="px-2 py-3 md:px-5 md:pb-8">
       <div className="mx-auto w-full max-w-7xl rounded-[1.9rem] border border-white/10 bg-[linear-gradient(180deg,#141417_0%,#09090b_100%)] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.24)] md:p-6">
-     <div className="w-full px-3 md:px-5 grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="rounded-[1.4rem] border border-white/10 bg-zinc-900 p-5">
+     <div className="w-full px-2 md:px-5 mt-4 md:mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="rounded-[1.4rem] border border-white/10 bg-zinc-900 p-4 md:p-5">
             <p className="text-xs font-bold uppercase tracking-[0.28em] text-zinc-500">
               Mohamed Turaab
             </p>
@@ -46,7 +46,7 @@ function Footer() {
             </p>
             <a
               href="mailto:mohamedturaab1991@gmail.com"
-              className="mt-4 block font-display text-xl text-white transition duration-300 hover:text-zinc-300"
+              className="mt-4 block font-display text-base sm:text-lg break-all text-white transition duration-300 hover:text-zinc-300"
             >
               mohamedturaab1991@gmail.com
             </a>
@@ -63,7 +63,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="mt-5 border-t border-white/10 pt-5 text-center text-sm text-zinc-500">
+        <div className="mt-3 md:mt-5 border-t border-white/10 pt-3 md:pt-5 text-center text-sm text-zinc-500">
           <p>Copyright &copy; 2026 Mohamed Turaab. All rights reserved.</p>
           <p className="mt-3">Designed and developed by Mohamed Turaab.</p>
         </div>
