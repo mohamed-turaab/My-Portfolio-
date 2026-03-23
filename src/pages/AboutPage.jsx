@@ -33,7 +33,7 @@ function AboutPage() {
             <div className="mt-6 flex items-center justify-between gap-4">
               <div>
                 <p className="text-xs uppercase tracking-[0.28em] text-zinc-500">
-                  Visual Identity
+                  Developer Vision
                 </p>
                 <p className="mt-3 font-display text-3xl text-white">
                   Mr Turaab "I Turn Ideas Into Reality"
