@@ -7,14 +7,14 @@ const footerLinks = [
 
 function Footer() {
   return (
-    <footer className="px-3 pb-6 pt-2 md:px-5 md:pb-8">
+    <footer className="px-3 py-4 md:px-5 md:pb-8">
       <div className="mx-auto w-full max-w-7xl rounded-[1.9rem] border border-white/10 bg-[linear-gradient(180deg,#141417_0%,#09090b_100%)] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.24)] md:p-6">
-        <div className="grid gap-4 lg:grid-cols-[1fr_0.9fr_0.9fr]">
+     <div className="w-full px-3 md:px-5 grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="rounded-[1.4rem] border border-white/10 bg-zinc-900 p-5">
             <p className="text-xs font-bold uppercase tracking-[0.28em] text-zinc-500">
               Mohamed Turaab
             </p>
-            <h2 className="mt-3 font-display text-2xl text-white md:text-3xl">
+            <h2  className="mt-3 font-display text-lg text-white md:text-3xl">
               Full Stack Developer building clean modern products.
             </h2>
             <p className="mt-3 max-w-lg leading-7 text-zinc-400">
