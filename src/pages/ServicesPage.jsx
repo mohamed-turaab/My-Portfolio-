@@ -1,15 +1,15 @@
 const services = [
   {
-    title: "Portfolio Design",
-    description: "Clean personal pages with strong visual balance.",
+    title: "Frontend Development",
+    description: "Responsive interfaces built with clean structure and modern styling.",
   },
   {
-    title: "Landing Pages",
-    description: "Focused layouts for brands, offers, and launches.",
+    title: "Backend Development",
+    description: "Reliable server-side logic, database flow, and secure app functionality.",
   },
   {
-    title: "Frontend Styling",
-    description: "Modern React styling with a polished dark finish.",
+    title: "Full Stack Web Apps",
+    description: "Complete web solutions that connect design, logic, and performance.",
   },
 ];
 
@@ -22,10 +22,10 @@ function ServicesPage() {
             Services
           </span>
           <h1 className="font-display text-5xl leading-none text-white md:text-7xl">
-            Clean work with a darker edge.
+            Full stack services built for modern projects.
           </h1>
           <p className="mt-6 text-lg leading-8 text-zinc-400">
-            Short, clear, and styled to match the portrait-led mood.
+            From interface design to backend logic, each service is focused on clean code and strong user experience.
           </p>
         </div>
 
@@ -46,7 +46,7 @@ function ServicesPage() {
               </p>
               <div className="mt-8 h-px w-full bg-white/10" />
               <p className="mt-6 text-sm uppercase tracking-[0.22em] text-zinc-500">
-                Tailored and polished
+                Clean and scalable
               </p>
             </article>
           ))}
