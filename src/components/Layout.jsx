@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import Header from "./Header";
 
 function Layout({ children }) {
@@ -7,6 +8,7 @@ function Layout({ children }) {
       <main className="pb-16 pt-6 md:pt-10">
         <div className="space-y-6 md:space-y-8">{children}</div>
       </main>
+      <Footer />
     </div>
   );
 }
