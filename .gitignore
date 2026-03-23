@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.vite/
+
+# Obsolete static files from the earlier version
+assets/
+script.js
+styles.css
