@@ -1,85 +1,118 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const links = [
-  { to: "#about", label: "About" },
-  { to: "#services", label: "Services" },
-  { to: "#testimonial", label: "Testimonial" },
-  { to: "#contact", label: "Contact" },
+  { to: "#about", label: "About", id: "about" },
+  { to: "#services", label: "Services", id: "services" },
+  { to: "#testimonial", label: "Testimonial", id: "testimonial" },
+  { to: "#contact", label: "Contact", id: "contact" },
 ];
 
-const navLinkClass = (centered = false) =>
+const navLinkClass = (active, centered = false) =>
   [
-    "relative rounded-full px-4 py-2.5 text-sm font-medium tracking-[0.02em] text-zinc-300 transition duration-300 hover:bg-zinc-800 hover:text-white",
+    "relative overflow-hidden rounded-[1.15rem] px-4 py-3 text-sm font-semibold tracking-[0.14em] transition duration-300",
+    active
+      ? "border border-white/10 bg-white/[0.08] text-white shadow-[0_12px_28px_rgba(0,0,0,0.18)]"
+      : "border border-transparent text-zinc-300 hover:border-white/10 hover:bg-white/[0.07] hover:text-white",
     centered ? "text-center" : "",
   ].join(" ");
 
+function DesktopNavigation({ activeSection, onNavigate }) {
+  return (
+    <div className="hidden items-center md:flex">
+      <div className="relative overflow-hidden rounded-[1.85rem] border border-white/10 bg-[linear-gradient(180deg,rgba(26,26,29,0.96),rgba(10,10,12,0.94))] p-[0.5rem] shadow-[0_28px_70px_rgba(0,0,0,0.34)]">
+        <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+        <div className="absolute left-6 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-white/[0.03] blur-3xl" />
+        <div className="relative flex items-center gap-2">
+          <nav
+            aria-label="Primary navigation"
+            className="flex items-center gap-2 rounded-[1.35rem] border border-white/5 bg-white/[0.03] px-1.5 py-1.5 backdrop-blur"
+          >
+            {links.map((link) => (
+              <a
+                key={link.to}
+                href={link.to}
+                className={navLinkClass(activeSection === link.id)}
+                onClick={() => onNavigate(link.id)}
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("about");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const threshold = window.scrollY + window.innerHeight * 0.28;
+      let currentSection = links[0].id;
+
+      for (const link of links) {
+        const section = document.getElementById(link.id);
+
+        if (section && section.offsetTop <= threshold) {
+          currentSection = link.id;
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleNavigate = (sectionId) => {
+    setActiveSection(sectionId);
+    setIsOpen(false);
+  };
 
   return (
     <header className="px-3 pt-3 md:px-5 md:pt-5">
       <div className="mx-auto w-full max-w-7xl">
-        <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(24,24,27,0.96),rgba(12,12,14,0.94))] px-4 py-4 shadow-[0_24px_65px_rgba(0,0,0,0.35)] md:px-6 md:py-5">
+        <div className="rounded-[2.1rem] border border-white/10 bg-[linear-gradient(180deg,rgba(24,24,27,0.96),rgba(10,10,12,0.94))] px-4 py-4 shadow-[0_30px_85px_rgba(0,0,0,0.38)] backdrop-blur md:px-6 md:py-5">
           <div className="relative">
             <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+            <div className="absolute -left-6 top-4 h-16 w-16 rounded-full bg-white/[0.03] blur-3xl" />
+            <div className="absolute -right-4 bottom-2 h-16 w-16 rounded-full bg-white/[0.03] blur-3xl" />
 
             <div className="relative flex items-center justify-between gap-4">
               <a
                 href="#about"
-                className="flex min-w-0 items-center gap-3"
-                onClick={() => setIsOpen(false)}
+                className="group flex min-w-0 items-center gap-3"
+                onClick={() => handleNavigate("about")}
               >
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-[1.35rem] bg-gradient-to-br from-zinc-950 via-zinc-800 to-zinc-700 font-display text-xl text-white shadow-lg shadow-black/25">
-                  M
-                </span>
-                <div className="min-w-0">
-                  <p className="truncate font-display text-2xl leading-none text-white">
+                <div className="relative">
+                  <span className="absolute inset-0 rounded-[1.45rem] bg-white/[0.08] blur-md transition duration-300 group-hover:bg-white/[0.12]" />
+                  <span className="relative grid h-12 w-12 shrink-0 place-items-center rounded-[1.35rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] font-display text-xl text-white shadow-lg shadow-black/25">
+                    M
+                  </span>
+                </div>
+                <div className="min-w-0 rounded-[1.2rem] border border-white/5 bg-white/[0.03] px-4 py-3 backdrop-blur">
+                  <p className="truncate font-display text-[1.35rem] leading-none text-white">
                     Mohamed Turaab
                   </p>
-                  <div className="mt-1 flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-zinc-500" />
-                    <p className="truncate text-[11px] uppercase tracking-[0.28em] text-zinc-400">
-                      Dark Portfolio
-                    </p>
-                  </div>
                 </div>
               </a>
 
-              <div className="hidden items-center gap-3 lg:flex">
-                <nav className="flex items-center gap-2 rounded-full border border-white/10 bg-zinc-900/90 p-1 shadow-[0_10px_25px_rgba(0,0,0,0.25)]">
-                  {links.map((link) => (
-                    <a
-                      key={link.to}
-                      href={link.to}
-                      className={navLinkClass()}
-                    >
-                      {link.label}
-                    </a>
-                  ))}
-                </nav>
-              </div>
-
-              <div className="hidden items-center gap-3 md:flex lg:hidden">
-                <nav className="flex items-center gap-2 rounded-full border border-white/10 bg-zinc-900/90 p-1 shadow-[0_10px_25px_rgba(0,0,0,0.25)]">
-                  {links.map((link) => (
-                    <a
-                      key={link.to}
-                      href={link.to}
-                      className={navLinkClass()}
-                    >
-                      {link.label}
-                    </a>
-                  ))}
-                </nav>
-              </div>
+              <DesktopNavigation
+                activeSection={activeSection}
+                onNavigate={handleNavigate}
+              />
 
               <div className="hidden items-center gap-3 xl:flex">
-                <div className="rounded-full border border-white/10 bg-zinc-900 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-zinc-300">
-                  Monochrome Mood
-                </div>
                 <a
                   href="#contact"
                   className="inline-flex min-h-11 items-center rounded-full border border-white/10 bg-white px-5 text-sm font-semibold text-zinc-950 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-0.5"
+                  onClick={() => handleNavigate("contact")}
                 >
                   Contact Me
                 </a>
@@ -87,7 +120,7 @@ function Header() {
 
               <button
                 type="button"
-                className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-[1.35rem] border border-white/10 bg-zinc-900 text-white shadow-[0_10px_25px_rgba(0,0,0,0.25)] md:hidden"
+                className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-[1.35rem] border border-white/10 bg-white/[0.04] text-white shadow-[0_14px_30px_rgba(0,0,0,0.25)] md:hidden"
                 aria-expanded={isOpen}
                 aria-label="Toggle navigation"
                 onClick={() => setIsOpen((open) => !open)}
@@ -114,23 +147,14 @@ function Header() {
 
             {isOpen ? (
               <div className="relative mt-4 md:hidden">
-                <div className="rounded-[1.6rem] border border-white/10 bg-zinc-950 p-3 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
-                  <div className="mb-3 rounded-[1.25rem] border border-white/10 bg-zinc-900 p-4">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-400">
-                      Navigate Sections
-                    </p>
-                    <p className="mt-2 font-display text-2xl text-white">
-                      Dark Layout
-                    </p>
-                  </div>
-
-                  <nav className="grid gap-2">
+                <div className="rounded-[1.7rem] border border-white/10 bg-[linear-gradient(180deg,rgba(15,15,17,0.98),rgba(8,8,10,0.96))] p-3 shadow-[0_24px_60px_rgba(0,0,0,0.34)]">
+                  <nav aria-label="Mobile navigation" className="grid gap-2">
                     {links.map((link) => (
                       <a
                         key={link.to}
                         href={link.to}
-                        className={navLinkClass(true)}
-                        onClick={() => setIsOpen(false)}
+                        className={navLinkClass(activeSection === link.id, true)}
+                        onClick={() => handleNavigate(link.id)}
                       >
                         {link.label}
                       </a>
@@ -140,7 +164,7 @@ function Header() {
                   <a
                     href="#contact"
                     className="mt-3 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-white px-5 text-sm font-semibold text-zinc-950 shadow-lg shadow-black/20"
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => handleNavigate("contact")}
                   >
                     Contact Me
                   </a>
