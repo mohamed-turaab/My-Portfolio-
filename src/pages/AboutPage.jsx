@@ -12,12 +12,12 @@ function AboutPage() {
           <span className="mb-3 inline-flex rounded-full border border-white/10 bg-zinc-900 px-4 py-1 text-xs font-bold uppercase tracking-[0.28em] text-zinc-300">
             About
           </span>
-          <h1 className="font-display text-5xl leading-none text-white md:text-7xl">
-            Mohamed Turaab is a Full Stack Developer creating modern digital experiences since 2023.
+          <h1 className="max-w-4xl font-display text-4xl leading-[0.98] text-white sm:text-5xl lg:text-6xl">
+            Mohamed Turaab builds modern full stack web experiences.
           </h1>
           <p className="mt-6 text-lg leading-8 text-zinc-400">
-            He builds clean interfaces and solid backend systems that feel
-            smooth, refined, and built with purpose.
+            Building clean interfaces and solid backend systems since 2023 with
+            a focus on polished, responsive, and reliable products.
           </p>
         </div>
 
