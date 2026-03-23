@@ -1,7 +1,7 @@
 const stats = [
-  { value: "03+", label: "Years refining style" },
-  { value: "12", label: "Clean page concepts" },
-  { value: "24h", label: "Fast updates" },
+  { value: "03+", label: "Years in development" },
+  { value: "UI", label: "Clean responsive interfaces" },
+  { value: "API", label: "Backend and database integration" },
 ];
 
 function AboutPage() {
@@ -48,14 +48,15 @@ function AboutPage() {
           <article className="rounded-[1.8rem] border border-white/10 bg-zinc-900 p-6 shadow-[0_10px_30px_rgba(0,0,0,0.18)]">
             <div className="rounded-[1.5rem] border border-white/10 bg-zinc-950 p-6">
               <p className="text-xs uppercase tracking-[0.28em] text-zinc-500">
-                Developer Profile
+                Full Stack Focus
               </p>
               <h2 className="mt-4 font-display text-4xl text-white">
-                Blending frontend precision with reliable backend structure.
+                Building modern web products from interface to backend logic.
               </h2>
               <p className="mt-5 max-w-xl leading-8 text-zinc-400">
-                From layout to logic, every project is designed to feel modern,
-                responsive, and technically strong from end to end.
+                Mohamed Turaab works across frontend and backend to create
+                responsive websites, connected APIs, and reliable digital
+                experiences that solve real problems.
               </p>
             </div>
 
