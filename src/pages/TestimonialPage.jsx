@@ -25,14 +25,14 @@ function TestimonialPage() {
       <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,#17171a_0%,#0f0f11_100%)] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.3)] md:p-8">
         <div className="mb-8 max-w-3xl">
           <span className="mb-3 inline-flex rounded-full border border-white/10 bg-zinc-900 px-4 py-1 text-xs font-bold uppercase tracking-[0.28em] text-zinc-300">
-            Community
+            Client Feedback
           </span>
           <h1 className="font-display text-5xl leading-none text-white md:text-7xl">
-            What they said about the work I delivered.
+            Words from people I built for.
           </h1>
           <p className="mt-6 text-lg leading-8 text-zinc-400">
-            Feedback from people I worked with after delivering websites and
-            full stack project work for them.
+            Feedback from clients who trusted me to design, build, and deliver
+            modern web experiences for their projects.
           </p>
         </div>
 
