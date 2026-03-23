@@ -2,12 +2,12 @@ function ContactPage() {
   return (
     <section id="contact" className="mx-auto w-full max-w-7xl px-3 md:px-5">
       <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,#17171a_0%,#0f0f11_100%)] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.3)] md:p-8">
-        <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="rounded-[1.8rem] border border-white/10 bg-zinc-900 p-6 shadow-[0_10px_30px_rgba(0,0,0,0.18)] md:p-8">
             <span className="mb-3 inline-flex rounded-full border border-white/10 bg-zinc-800 px-4 py-1 text-xs font-bold uppercase tracking-[0.28em] text-zinc-300">
               Contact
             </span>
-            <h1 className="font-display text-5xl leading-none text-white md:text-7xl">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-none text-white">
               Ready to build something cleaner?
             </h1>
             <p className="mt-6 text-lg leading-8 text-zinc-400">
@@ -63,7 +63,7 @@ function ContactPage() {
 
               <button
                 type="submit"
-                className="inline-flex min-h-14 items-center justify-center rounded-full bg-white px-6 text-sm font-bold uppercase tracking-[0.24em] text-zinc-950 transition hover:-translate-y-0.5"
+                className="inline-flex min-h-12 sm:min-h-14 items-center justify-center rounded-full bg-white px-6 text-sm font-bold uppercase tracking-[0.24em] text-zinc-950 transition hover:-translate-y-0.5"
               >
                 Send Message
               </button>

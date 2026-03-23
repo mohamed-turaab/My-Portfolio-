@@ -21,13 +21,13 @@ function AboutPage() {
           </p>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-[0.95fr_1.05fr]">
           <article className="rounded-[1.8rem] border border-white/10 bg-zinc-900 p-6 shadow-[0_10px_30px_rgba(0,0,0,0.18)]">
             <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-black">
               <img
                 src="/my-photo.jpg.jpg"
                 alt="Portfolio preview"
-                className="h-[420px] w-full object-cover object-center grayscale contrast-125 md:h-[460px] md:object-[center_22%]"
+                className="w-full h-[260px] sm:h-[320px] md:h-[420px] object-cover object-center grayscale contrast-125"
               />
             </div>
             <div className="mt-6 flex items-center justify-between gap-4">

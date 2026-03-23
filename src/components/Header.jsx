@@ -97,7 +97,7 @@ function Header() {
                   </span>
                 </div>
                 <div className="min-w-0 rounded-[1.2rem] border border-white/5 bg-white/[0.03] px-4 py-3 backdrop-blur">
-                  <p className="truncate font-display text-[1.35rem] leading-none text-white">
+                  <p className="truncate font-display text-base sm:text-lg md:text-xl leading-none text-white">
                     Mohamed Turaab
                   </p>
                 </div>

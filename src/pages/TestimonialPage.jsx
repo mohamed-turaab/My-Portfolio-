@@ -27,7 +27,7 @@ function TestimonialPage() {
           <span className="mb-3 inline-flex rounded-full border border-white/10 bg-zinc-900 px-4 py-1 text-xs font-bold uppercase tracking-[0.28em] text-zinc-300">
             Client Feedback
           </span>
-          <h1 className="font-display text-5xl leading-none text-white md:text-7xl">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-none text-white">
             Words from people I built for.
           </h1>
           <p className="mt-6 text-lg leading-8 text-zinc-400">
@@ -36,7 +36,7 @@ function TestimonialPage() {
           </p>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:grid-cols-3">
           {testimonials.map((item) => (
             <article
               key={item.name}
