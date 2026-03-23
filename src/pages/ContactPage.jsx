@@ -19,7 +19,9 @@ function ContactPage() {
                 <p className="text-xs uppercase tracking-[0.28em] text-zinc-500">
                   Email
                 </p>
-                <p className="mt-2 text-lg text-white">hello@yourmail.com</p>
+                <p className="mt-2 text-lg text-white">
+                  mohamedturaab1991@gmail.com
+                </p>
               </div>
               <div className="rounded-[1.5rem] border border-white/10 bg-zinc-950 p-5">
                 <p className="text-xs uppercase tracking-[0.28em] text-zinc-500">
