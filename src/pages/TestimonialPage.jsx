@@ -1,18 +1,21 @@
 const testimonials = [
   {
-    name: "Ayaan Studio",
-    role: "Brand Founder",
-    quote: "Sharp, premium, and easy to trust.",
+    name: "Mr Sharafdiin",
+    role: "Website Client",
+    quote:
+      "The work Mohamed did for me was clean, fast, and exactly how I wanted it to feel.",
   },
   {
-    name: "Nuur Media",
-    role: "Creative Director",
-    quote: "Dark, clean, and far from a generic template.",
+    name: "Omar Tood",
+    role: "Project Client",
+    quote:
+      "He handled the project in a professional way and delivered a smooth frontend with solid backend work.",
   },
   {
-    name: "Sahal Tech",
-    role: "Startup Team",
-    quote: "Simple structure, stronger presence.",
+    name: "Salah Sharafdiin",
+    role: "Work Testimonial",
+    quote:
+      "The website he built for me looked modern, worked well on every screen, and gave the project a strong presence.",
   },
 ];
 
@@ -25,8 +28,12 @@ function TestimonialPage() {
             Community
           </span>
           <h1 className="font-display text-5xl leading-none text-white md:text-7xl">
-            Short words. Strong impression.
+            What they said about the work I delivered.
           </h1>
+          <p className="mt-6 text-lg leading-8 text-zinc-400">
+            Feedback from people I worked with after delivering websites and
+            full stack project work for them.
+          </p>
         </div>
 
         <div className="grid gap-5 lg:grid-cols-3">
